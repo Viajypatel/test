@@ -3,15 +3,16 @@ const express = require('express');
 
 // Create an Express application
 const app = express();
-
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
 // Define a route handler for the root URL
 app.get('/', (req, res) => {
-  res.send('Hello, World!');
+  res.render('index');
 });
 
 // Define a route handler for another URL
 app.get('/about', (req, res) => {
-  res.send('About page');
+  res.send("thisidkdkdkk")
 });
 
 // Define a route handler for handling 404 errors
